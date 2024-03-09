@@ -42,14 +42,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "readcsv"
-version = "0.1.0"
-dependencies = [
- "regex",
- "serde_json",
-]
-
-[[package]]
 name = "regex"
 version = "1.10.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -124,6 +116,14 @@ dependencies = [
  "proc-macro2",
  "quote",
  "unicode-ident",
+]
+
+[[package]]
+name = "syue"
+version = "0.1.0"
+dependencies = [
+ "regex",
+ "serde_json",
 ]
 
 [[package]]
