@@ -1,7 +1,13 @@
 [package]
 name = "readcsv"
 version = "0.1.0"
+authors = ["Rashyad <rashyadarfan@gmail.com>"]
 edition = "2021"
+description = "A package to read CSV"
+repository = https://github.com/rashyad/readcsv
+license = "MIT"
+keywords = ["csv", "readcsv", "csvtojson", "csvtovector", "readcsvinrustlang"]
+categories = ["accessibility", "parsing"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
