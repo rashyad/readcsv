@@ -1,6 +1,6 @@
 [package]
 name = "syue"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Rashyad <rashyadarfan@gmail.com>"]
 edition = "2021"
 description = "A simple reader for csv"
@@ -15,7 +15,7 @@ path = "src/lib.rs"
 
 [[bin]]
 name = "syue"
-path = "bin/bin.rs" # replace bin.rs with name of your file
+path = "bin/bin.rs"
 
 
 
