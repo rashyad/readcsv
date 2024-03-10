@@ -4,10 +4,20 @@ version = "0.1.0"
 authors = ["Rashyad <rashyadarfan@gmail.com>"]
 edition = "2021"
 description = "A simple reader for csv"
-repository = "https://github.com/rashyad/readcsv"
+repository = "https://github.com/rashyad/syue"
 license = "MIT"
 keywords = ["csv", "readcsv", "csvtojson", "csvtovector", "readcsvinrustlang"]
 categories = ["accessibility", "parsing"]
+
+[lib]
+name = "syue"
+path = "src/lib.rs"
+
+[[bin]]
+name = "syue"
+path = "bin/bin.rs" # replace bin.rs with name of your file
+
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

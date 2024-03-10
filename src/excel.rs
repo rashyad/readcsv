@@ -1,23 +1,21 @@
-use std::fmt::format;
 use std::path::Path;
 use serde_json::{Map, Value};
 use std::{ fs };
 use std::string::String;
-use regex::Regex;
 
-pub struct CsvReader {
+pub(crate) struct Reader {
     file_path: String
 }
  
-impl CsvReader {
+impl Reader {
 
     pub fn new(file_path: &Path) -> Self {
-        CsvReader {
+        Reader {
             file_path: String::from(file_path.to_str().unwrap()),
         }
     }
 
-    pub fn csv_into_json(&self) -> Vec<Value>{
+    pub(crate) fn xlsx_into_json(&self) -> Vec<Value>{
        let contents = fs::read_to_string(self.file_path.as_str())
        .unwrap();
     
@@ -75,7 +73,7 @@ impl CsvReader {
        result_vec
     }
  
-    pub fn csv_into_iter(&self) -> Vec<Vec<String>>  {
+    pub(crate) fn xlsx_into_iter(&self) -> Vec<Vec<String>>  {
     
        let contents = fs::read_to_string(self.file_path.as_str())
        .unwrap();
@@ -84,23 +82,14 @@ impl CsvReader {
     
        let result_vec: Vec<Vec<String>> = content_iter.map(|row| { 
           
-            // TODO - implement REGEX
-            // by default, REGEX will check only for comma between double quotes
-            let pattern = format!(r"{}" ,"\"(\"[^\",]+), ([^\"])*\"");
-
-            let re = Regex::new(pattern.as_str()).unwrap();
-
-            let new_line = re.replace_all(&row, "||");
-
-            println!("{:?}", new_line);
-
-            let split_line: Vec<String> = row
-            .split(",")
-            .into_iter()
-            .map(|y| y.to_string())
-            .collect();
-
-            split_line 
+          // TODO - implement REGEX
+          let split_line: Vec<String> = row
+          .split(",")
+          .into_iter()
+          .map(|y| y.to_string())
+          .collect();
+    
+          split_line 
        }).collect();
     
        result_vec
