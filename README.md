@@ -1,5 +1,3 @@
-# Library to read csv file
+# Read csv file with fast speed
 
-## Not Ready For Public Use!
-
-The library aims to provide fast and simple methods to read both excel and csv files.
+The library aims to provide fast and simple methods to read csv files.

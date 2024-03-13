@@ -1,15 +1,14 @@
-use std::path::Path;
+use std::{path::Path};
 use syue::csv;
 
-fn main(){
-   let file_path = Path::new("./bin/assets/data.csv");
 
-   print!("{:?}", file_path);
+fn main() {
+      let file_path = Path::new("./bin/assets/data.csv");
 
-   let new_reader = csv::CsvReader::new(file_path);
+      let r = csv::CsvReader::new(file_path);
 
-   let data = new_reader.csv_into_iter();
+      let x = r.csv_into_iter();
 
-   dbg!(data);
+      dbg!(x);
 
 }
